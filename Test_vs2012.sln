@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6_ConsoleApp", "ConsoleApplication1\EF6_ConsoleApp.csproj", "{30D31E16-C1CD-4801-BB88-DC66FC9E0BBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6Model", "EF6Model\EF6Model.csproj", "{7505782A-598C-4CA2-A0AD-3539295A2265}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30D31E16-C1CD-4801-BB88-DC66FC9E0BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D31E16-C1CD-4801-BB88-DC66FC9E0BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D31E16-C1CD-4801-BB88-DC66FC9E0BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D31E16-C1CD-4801-BB88-DC66FC9E0BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7505782A-598C-4CA2-A0AD-3539295A2265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7505782A-598C-4CA2-A0AD-3539295A2265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7505782A-598C-4CA2-A0AD-3539295A2265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7505782A-598C-4CA2-A0AD-3539295A2265}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal
