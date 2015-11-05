@@ -13,7 +13,7 @@ namespace EF6Model
         public DbSet<AccountContract> Account { get; set; }
 
         public EFTestContext()
-            : base("server=10.1.25.17;uid=sa;pwd=tc004532;database=EFTest")
+            : base("server=localhost;User Id=sa;password=123456;Persist Security Info=True;database=EFTest;")
         {
             //第一次运行需要建立DB架构，并插入测试数据。之后可删除
             //Database.CreateIfNotExists();

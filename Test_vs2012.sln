@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6_ConsoleApp", "ConsoleAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF6Model", "EF6Model\EF6Model.csproj", "{7505782A-598C-4CA2-A0AD-3539295A2265}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskThreadTest", "TaskThreadTest\TaskThreadTest.csproj", "{5CCD8BF3-D57B-45CC-95DA-61A0542C9841}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{7505782A-598C-4CA2-A0AD-3539295A2265}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7505782A-598C-4CA2-A0AD-3539295A2265}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7505782A-598C-4CA2-A0AD-3539295A2265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CCD8BF3-D57B-45CC-95DA-61A0542C9841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CCD8BF3-D57B-45CC-95DA-61A0542C9841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CCD8BF3-D57B-45CC-95DA-61A0542C9841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CCD8BF3-D57B-45CC-95DA-61A0542C9841}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

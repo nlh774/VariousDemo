@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using CommTools;
 using System.Data.Entity;
 using EF6Model;
 
@@ -110,6 +106,9 @@ namespace EF6_ConsoleApp
 //                                 INNER JOIN TCBaseMessage tm  WITH(NOLOCK)
 //                                 ON tm.MAID = ta.AID ";
 //            var accounts3 = context.Database.SqlQuery<AccountContract>(sqlAccMsg).ToList(); //ToList()指定立即查询
+
+              //若量大，可能慢
+              //int effectRows = context.Database.ExecuteSqlCommand("delete from TCBaseMessage");
             }
         }
     }
