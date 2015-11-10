@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Head
+{
+    <script type="text/javascript">
+        //限制使用本系统的浏览器为Chrome，不是或版本过低则提示
+        var info = "本系统基于Chrome开发。您使用的浏览器不是Chrome浏览器或版本过低，请自行下载或者访问欢迎主页上提供的地址";
+        var browser = navigator.userAgent;
+        var index = browser.indexOf("Chrome");
+        if (index > -1) {
+            browserVersion = parseInt(browser.substr(index + 7, 2));
+            if (browserVersion < 30) {
+                alert(info);
+            }
+        }
+        else {
+            alert(info);
+        }
+
+        var dhxLayout;
+        var tabbar;
+        var menu;
+        dhtmlxEvent(window, "load", function () {
+            dhxLayout = new dhtmlXLayoutObject("mainContent", "2U", "dhx_terrace");
+            dhxLayout.cells("a").setWidth(230);
+            dhxLayout.cells("a").setText("系统导航");
+            var sb = dhxLayout.attachStatusBar();
+            sb.setText("");
+
+            //Tabbar
+            tabbar = dhxLayout.cells("b").attachTabbar();
+            tabbar.enableTabCloseButton(true);
+            tabbar.setHrefMode("iframes");
+            tabbar.setImagePath('@Url.Content("~/Content/dhtmlxTabbar/imgs/")');
+            tabbar.attachEvent("onTabClose", function (e) {
+                return e != 'welcome';
+            });
+
+            //进入主页时显示欢迎页面
+            addWelcome();
+
+            var dhxTree = dhxLayout.cells("a").attachTree();
+            dhxTree.setImagePath('@Url.Content("~/Content/dhtmlxTree/imgs/csh_dhx_terrace/")');
+            dhxTree.loadXMLString("@Html.Raw(ViewBag.Menus)");
+            dhxTree.attachEvent("onClick", function (o) {
+                AddTab(o, tabbar);
+            });
+        });
+
+        window.onresize = function () {
+            dhxLayout.setSizes();
+        };
+
+        function addWelcome() {
+            var welcome = "welcome";
+            tabbar.addTab(welcome, "欢迎");
+            tabbar.setContentHref(welcome, "@Url.Content("~/Home/Welcome")");
+            tabbar.setTabActive(welcome);
+        }
+
+        function closeAll() {
+            tabbar.clearAll();
+            addWelcome();
+            return false;
+        }
+
+        //打开大窗体，类似tab文件夹标签
+        function AddTab(key, windowTab) {
+            //key格式: /Project/Index_项目维护_21650，或21650。前者页面按钮，后者标识大栏目、不对应页面、无需打开页面
+            var s = "_";
+            if (key == '') return;
+            if (key.substring(0, 1) == s) return;
+
+            var items = key.split(s);
+            if (items.length == 3) {
+                var url = items[0];
+                var text = items[1];
+                var id = items[2];
+                //遍历已打开的窗口Id与欲打开的窗口id，若存在相同则表示已打开了，无需再次打开,只需重新请求页面获取数据、显示在最前面激活
+                for (var perTabId in windowTab._tabs) {
+                    if (perTabId == id) {
+                        windowTab.setContentHref(id, url);
+                        windowTab.setTabActive(id);
+                        return;
+                    }
+                }
+                //新页面，则打开页面获取数据、显示在最前面激活
+                windowTab.addTab(id, text);
+                windowTab.setContentHref(id, url);
+                windowTab.setTabActive(id);
+            }
+        }
+
+        //打开子窗口
+        function openTab(id, url, text) {
+            for (var a in tabbar._tabs) {
+                if (a == id) {
+                    tabbar.forceLoad(id, url);
+                    tabbar.setTabActive(id);
+                    return;
+                }
+            }
+            tabbar.addTab(id, text);
+            tabbar.setContentHref(id, url);
+            tabbar.setTabActive(id);
+        }
+    </script>
+} 
+<div class="navbar">
+    <div class="navbar-inner">
+        <a href="@Url.Action("Index","Home")" class="brand">BaseUI</a>
+        <p class="navbar-text pull-right">
+            欢迎您，@ViewBag.UserName  @Html.ActionLink("退出", "Logout", "Account", null,new { onclick = "javascript:return confirm('确认要退出吗?');" })
+            <a href="#" onclick="javascript:closeAll();">关闭所有窗口</a></p>
+    </div>
+</div>
+<div id="mainContent" style="width: 100%; height: 92%; margin-top: 3px; position: absolute;">
+</div>

@@ -1,0 +1,29 @@
+﻿* {
+	line-height: 142%;
+}
+body {
+    color: #000000;
+    direction: ltr;
+    font-family: Verdana,Simsun;
+    font-size: 88%;
+}
+ 
+div#offer
+{
+    width:475px;
+    height:490px;
+    overflow:hidden;
+}
+div#offer img
+{
+    height:340px;
+    width:475px;
+    border:none;
+    display:block;
+}
+div#offer div#text
+{
+    height:150px;
+    width:413px;
+    padding:15px 31px 25px 31px;
+}
