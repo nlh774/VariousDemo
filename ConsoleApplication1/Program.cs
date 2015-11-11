@@ -41,8 +41,10 @@ namespace EF6_ConsoleApp
                 //WHERE [Extent1].[MAID] = @EntityKeyValue1',N'@EntityKeyValue1 bigint',@EntityKeyValue1=1 
 
                 #endregion
-                msg.Title = "zzzzz";
-                context.SaveChanges();
+
+                //msg.Title = "zzzzz";
+                //context.SaveChanges();
+
                 #region EF只更新Title字段，还是蛮聪明的
 
                 //exec sp_executesql N'UPDATE [dbo].[TCBaseMessage]
@@ -54,6 +56,7 @@ namespace EF6_ConsoleApp
 
 
                 //var account = context.Account.Include(t => t.Messages).FirstOrDefault(t => t.AccountId == 1);   //查询账号并指定附带查询出该账号所属的消息，立即查询（不延迟加载）
+
                 #region 转换出的sql，虽然丑了点，但是相信sqlserver 会优化的，具体未知。
 
                 //SELECT [Project2].[C1] AS [C1],
@@ -96,19 +99,21 @@ namespace EF6_ConsoleApp
 
                 //若要性能高，可以自己写sql。sql中的列定义要符合模型的属性名，所以用AS关键字
                 //单表，只查账号表
-//            string sqlAcc = @"SELECT TOP 1000 [AID] AS [AccountId],[aKey] AS [Key]
-//                              FROM [EFTest].[dbo].[TCBaseAccount] WITH(NOLOCK) ";
-//            var accounts2 = context.Database.SqlQuery<AccountContract>(sqlAcc).ToList(); //ToList()指定立即查询
+                //            string sqlAcc = @"SELECT TOP 1000 [AID] AS [AccountId],[aKey] AS [Key]
+                //                              FROM [EFTest].[dbo].[TCBaseAccount] WITH(NOLOCK) ";
+                //            var accounts2 = context.Database.SqlQuery<AccountContract>(sqlAcc).ToList(); //ToList()指定立即查询
 
                 //两表联查，查账号及其归属的消息
-//            string sqlAccMsg = @"SELECT ta.AID AS [AccountId],ta.aKey AS [Key],tm.MID AS [MessageId],tm.mTitle AS [Titlle],tm.mContent AS [Content]
-//                                 FROM TCBaseAccount ta WITH(NOLOCK) 
-//                                 INNER JOIN TCBaseMessage tm  WITH(NOLOCK)
-//                                 ON tm.MAID = ta.AID ";
-//            var accounts3 = context.Database.SqlQuery<AccountContract>(sqlAccMsg).ToList(); //ToList()指定立即查询
+                //            string sqlAccMsg = @"SELECT ta.AID AS [AccountId],ta.aKey AS [Key],tm.MID AS [MessageId],tm.mTitle AS [Titlle],tm.mContent AS [Content]
+                //                                 FROM TCBaseAccount ta WITH(NOLOCK) 
+                //                                 INNER JOIN TCBaseMessage tm  WITH(NOLOCK)
+                //                                 ON tm.MAID = ta.AID ";
+                //            var accounts3 = context.Database.SqlQuery<AccountContract>(sqlAccMsg).ToList(); //ToList()指定立即查询
 
-              //若量大，可能慢
-              //int effectRows = context.Database.ExecuteSqlCommand("delete from TCBaseMessage");
+                //若量大，可能慢
+                //int effectRows = context.Database.ExecuteSqlCommand("delete from TCBaseMessage");
+
+                Console.Read();
             }
         }
     }
