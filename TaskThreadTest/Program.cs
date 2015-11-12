@@ -12,6 +12,7 @@ namespace TaskThreadTest
     {
         static void Main(string[] args)
         {
+            
             int count = 10000;
             //顺序执行，必须执行完该循环才能继续之后的代码
             //for (int index = 0; index < count; index++)

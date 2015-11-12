@@ -15,5 +15,6 @@ namespace EF6Model.Service
                 return context.Message.ToList();
             }
         }
+
     }
 }
