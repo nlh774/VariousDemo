@@ -1,69 +1,77 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using CommTools;
 
 namespace EF6Model.Service
 {
     public class UserService
     {
-        public void Find()
+        public int InsertUseByEF(int i)
         {
-            DateTime dt = DateTime.Parse("2015-11-12 20:40");
             using (EFTestContext context = new EFTestContext())
             {
-                Console.WriteLine(context.User.FirstOrDefault(t => t.CreatedOn > dt).AccountId);
+                var user = new UserContract
+                {
+                    Name = "InsertUseByEF" + i,
+                    CardId = "11111",
+                    Password = "222",
+                    CreatedOn = DateTime.Now
+                };
+                context.User.Add(user);
+                return context.SaveChanges();
             }
         }
 
+        public int InsertUseBySqlHelper(int i)
+        {
+            string conn = ConfigurationManager.ConnectionStrings["EF6Test"].ConnectionString;
+            string sqlInsert = string.Format(@"
+                                INSERT INTO TCBaseUser
+                                (
+	                                Name,
+	                                CardId,
+	                                [Password],
+	                                CreatedOn
+                                )
+                                VALUES
+                                (
+	                                'InsertUseBySqlHelper{0}',
+	                                '11111',
+	                                '222',
+	                                '2015-11-13 11:00:00'
+                                )", i);
+            return SqlHelper.ExecuteNonQuery(conn, System.Data.CommandType.Text, sqlInsert);
+        }
 
         public void BulkInsert()
         {
+            const int perInsertCount = 100000;
             using (EFTestContext context = new EFTestContext())
             {
-                Stopwatch st = new Stopwatch();
-                int count = 10000000;
-
-                //context.User.Add(new UserContract
-                //{
-                //    Name = "nlh",
-                //    CardId = "11111",
-                //    Password = "222",
-                //    CreatedOn = DateTime.Now
-                //});
-                //context.SaveChanges();
-
-
-                st.Start();
-                for (int i = 0; i < count; i++)
+                for (int i = 0; i < 100; i++)
                 {
-                    context.User.Add(new UserContract
+                    List<UserContract> users = new List<UserContract>(perInsertCount + 1);
+                    for (int j = 0; j < perInsertCount; j++)
                     {
-                        Name = "nlh",
-                        CardId = "11111",
-                        Password = "222",
-                        CreatedOn = DateTime.Now
-                    });
+                        var user = new UserContract
+                        {
+                            Name = "nlh" + j + 1,
+                            CardId = "11111",
+                            Password = "222",
+                            CreatedOn = DateTime.Now
+                        };
+                        //context.User.Add(user);   //直接插入上下文，下面调用SaveChanges(),BulkSaveChanges()更新
+                        users.Add(user);
+                    }
+                    //context.SaveChanges();
+                    context.BulkInsert(users);  //context.BulkSaveChanges();  没有context.BulkInsert(users);快
+                    
                 }
-                context.BulkSaveChanges();
-                st.Stop();
-                Console.WriteLine(st.ElapsedMilliseconds);
-
-                //st.Restart();
-                //for (int i = 0; i < count; i++)
-                //{
-                //    context.User.Add(new UserContract
-                //    {
-                //        Name = "nlh",
-                //        CardId = "11111",
-                //        Password = "222",
-                //        CreatedOn = DateTime.Now
-                //    });
-                //}
-                //context.SaveChanges();
-                //st.Stop();
-                //Console.WriteLine(st.ElapsedMilliseconds);
             }
         }
     }

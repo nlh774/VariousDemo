@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EF6Model
 {
+    [Table("TCBaseUser")]
     public class UserContract
     {
         /// <summary>
         /// 主键
         /// </summary>
         [Key]
-        public long AccountId { get; set; }
+        public long Id { get; set; }
 
         public string Name { get; set; }
 
