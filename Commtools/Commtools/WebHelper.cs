@@ -18,10 +18,11 @@ namespace Commtools
         /// <summary>
         /// 请求地址
         /// </summary>
-        public string RequestUrl { get; private set; }
+        public string RequestUrl { get; set; }
 
         /// <summary>
         /// 请求数据
+        /// 强烈建议Post请求必须有参数，标准http服务器会返回411，虽然本帮助类避免了这个问题
         /// </summary>
         public string RequestParam { get; set; }
 
@@ -48,6 +49,7 @@ namespace Commtools
         private HttpMethod _method = HttpMethod.Post;
         /// <summary>
         /// 请求的方式，默认Post方式
+        /// 强烈建议Post请求必须有参数，标准http服务器会返回411，虽然本帮助类避免了这个问题
         /// </summary>
         public HttpMethod Method
         {
@@ -87,30 +89,36 @@ namespace Commtools
 
         /// <summary>
         /// 获取响应并转成Json对象返回
+        /// 出错会直接抛出异常
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
         public T GetResponse<T>()
         {
-            ContentType = "application/json;charset=utf-8";
             return JsonConvert.DeserializeObject<T>(GetResponse());
         }
 
         /// <summary>
         /// 获取响应
+        /// 出错会直接抛出异常
         /// </summary>
-        /// <returns></returns>
         public string GetResponse()
         {
             string result = string.Empty;
+            //强烈建议Post请求必须有参数，标准http服务器会返回411，但本方法不存在这个问题,因为写入空数组requestStream.Write(data, 0, data.Length);
+            //if (Method == HttpMethod.Post && RequestParam.IsNullOrWhiteSpace()) return result;  
 
             HttpWebRequest request = WebRequest.Create(RequestUrl) as HttpWebRequest;
             request.Method = Method.ToString();
             request.ContentType = ContentType;
             request.Timeout = Timeout;
+            //封装请求参数
             if (Method == HttpMethod.Get)
             {
-                if (RequestParam.IsNotNullOrWhiteSpace()) RequestUrl += "?" + RequestParam; 
+                if (RequestParam.IsNotNullOrWhiteSpace())
+                {
+                    RequestUrl += "?" + RequestParam;
+                    request = WebRequest.Create(RequestUrl) as HttpWebRequest;  //request.RequestUri只读，所以只能重新创建
+                }
             }
             else
             {
@@ -121,6 +129,7 @@ namespace Commtools
                     requestStream.Write(data, 0, data.Length);
                 }
             }
+            //请求远程服务器处理相应
             using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
             {
                 using (Stream responseStream = response.GetResponseStream())

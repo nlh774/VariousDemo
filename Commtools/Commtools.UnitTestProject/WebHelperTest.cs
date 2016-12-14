@@ -1,6 +1,7 @@
 ﻿using Commtools;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace Commtools.UnitTestProject
 {
@@ -64,24 +65,47 @@ namespace Commtools.UnitTestProject
         #endregion
 
 
-    
-        private void GetResponseTestHelper<T>()
-        {
-            WebHelper target = new WebHelper(); // TODO: 初始化为适当的值
-            T expected = default(T); // TODO: 初始化为适当的值
-            T actual;
-            actual = target.GetResponse<T>();
-            Assert.AreEqual(expected, actual);
-        }
+        #region 泛型类测试搞不定
+        /////<summary>
+        /////GetResponse 泛型的测试
+        /////</summary>
+        //[TestMethod()]
+        //public void GetResponseTTest()
+        //{
+        //    //get 无参
+        //    WebHelper target = new WebHelper("http://localhost:1444/Interface/CityServiceGet", HttpMethod.Get);
+        //    var expected = new List<City> 
+        //    {
+        //        new City{Id=1,Name="上海"},
+        //        new City{Id=2,Name="北京"},
+        //        new City{Id=3,Name="苏州"},
+        //        new City{Id=4,Name="重庆"},
+        //        new City{Id=5,Name="南京"},
+        //        new City{Id=6,Name="嘉兴"},
+        //    };
+        //    List<City> actual;
+        //    actual = target.GetResponse<List<City>>();
+        //    Assert.AreEqual<List<City>>(expected, actual);//.AreEqual(expected, actual);
+        //    //get 有参
+        //    target.RequestParam = "id=4";
+        //    expected = new List<City> 
+        //    {
+        //        new City{Id=4,Name="嘉兴"},
+        //    };
+        //    actual = target.GetResponse<List<City>>();
+        //    Assert.AreEqual(expected, actual);
 
-        ///<summary>
-        ///GetResponse 泛型的测试
-        ///</summary>
-        [TestMethod()]
-        public void GetResponseTTest()
-        {
-            GetResponseTestHelper<GenericParameterHelper>();
-        }
+        //    //post 必须有参
+        //    target.Method = HttpMethod.Post;
+        //    target.RequestParam = "name=上海";
+        //    expected = new List<City> 
+        //    {
+        //        new City{Id=1,Name="上海"},
+        //    };
+        //    actual = target.GetResponse<List<City>>();
+        //    Assert.AreEqual(expected, actual);
+        //} 
+        #endregion
 
         /// <summary>
         ///GetResponse 的测试
@@ -89,11 +113,33 @@ namespace Commtools.UnitTestProject
         [TestMethod()]
         public void GetResponseTest()
         {
-            WebHelper target = new WebHelper(); // TODO: 初始化为适当的值
-            string expected = string.Empty; // TODO: 初始化为适当的值
+            //get 无参
+            WebHelper target = new WebHelper("http://localhost:1444/Interface/CityServiceGet",HttpMethod.Get);
+            string expected = "[{\"Id\":1,\"Name\":\"上海\"},{\"Id\":2,\"Name\":\"北京\"},{\"Id\":3,\"Name\":\"苏州\"},{\"Id\":4,\"Name\":\"重庆\"},{\"Id\":5,\"Name\":\"南京\"},{\"Id\":6,\"Name\":\"嘉兴\"}]";
             string actual;
             actual = target.GetResponse();
             Assert.AreEqual(expected, actual);
+            //get 有参
+            target.RequestParam = "id=1";
+            expected = "[{\"Id\":1,\"Name\":\"上海\"}]";
+            actual = target.GetResponse();
+            Assert.AreEqual(expected, actual);
+
+            //post 必须有参
+            target.RequestUrl = "http://localhost:1444/Interface/CityServicePost";
+            target.Method = HttpMethod.Post;
+            target.RequestParam = "name=上海";
+            expected = "[{\"Id\":1,\"Name\":\"上海\"}]";
+            actual = target.GetResponse();
+            Assert.AreEqual(expected, actual);
         }
+
+    }
+
+    public class City
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
     }
 }
