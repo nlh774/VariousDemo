@@ -1,0 +1,41 @@
+﻿@model List<EF6Model.AccountContract>
+@{
+    ViewBag.Title = "搜索";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Head
+{
+    
+}
+
+@if (Model != null)
+{
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>系统Id</th>
+                <th>系统标识</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.AccountId   
+                    </td>
+                    <td>
+                        @item.Key
+                    </td>
+                    <td style="text-align:center;">
+                        @{
+                            var editUrl = Url.Content("~/Account/Edit/" + item.AccountId);
+                        }
+                        @Html.ActionLink("编辑", "Edit", "Account", new { id = item.AccountId }, new { onclick = "javascript: window.parent.openTab('editSystem', '" + editUrl + "', '编辑',true);return false;" })
+                        @Html.ActionLink("删除", "Remove", "Account", new { id = item.AccountId, returnUrl = Request.RawUrl }, new { onclick = "javascript:return confirm('确认要删除吗?');" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

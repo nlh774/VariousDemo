@@ -1,0 +1,1087 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83C8D78B-8194-4D0B-9F45-840DC68E3F24}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BaseUI</RootNamespace>
+    <AssemblyName>BaseUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.3.0.20105.1\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.1.0.20105.408\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.1.0.20105.408\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-ie6.min.css" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\codemirror.css" />
+    <Content Include="Content\dhtmlx.css" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_black\dhxacc_bg_hover.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_black\dhxacc_bg_normal.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_blue\dhxacc_bg_hover.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_blue\dhxacc_bg_normal.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_skyblue\dhxacc_bg_hover.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_skyblue\dhxacc_bg_normal.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_skyblue\dhxacc_bg_sb.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_skyblue\dhxacc_btns.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_terrace\bg_active.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_terrace\bg_arrow.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_terrace\bg_def.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_terrace\dhxacc_bg.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_terrace\dhxacc_bg_hover.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_terrace\dhxacc_bg_normal.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_terrace\dhxacc_bg_sb.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_terrace\dhxacc_btns.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_web\dhxacc_bg.gif" />
+    <Content Include="Content\dhtmlxAccordion\imgs\dhxaccord_dhx_web\dhxacc_btns.gif" />
+    <Content Include="Content\dhtmlxAccordion\skins\dhtmlxaccordion_dhx_black.css" />
+    <Content Include="Content\dhtmlxAccordion\skins\dhtmlxaccordion_dhx_blue.css" />
+    <Content Include="Content\dhtmlxAccordion\skins\dhtmlxaccordion_dhx_skyblue.css" />
+    <Content Include="Content\dhtmlxAccordion\skins\dhtmlxaccordion_dhx_terrace.css" />
+    <Content Include="Content\dhtmlxAccordion\skins\dhtmlxaccordion_dhx_web.css" />
+    <Content Include="Content\dhtmlxLayout\dhtmlxlayout.css" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_bg.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_collapsedhor.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_collapsedver.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_cpanel_btn_dock.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_cpanel_btn_undock.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_drag_hor.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_drag_ver.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_hor1l.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_hor1r.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_hor2l.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_hor2r.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_progress.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_progress_global.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_ver1b.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_ver1t.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_ver2b.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_black\dhxlayout_ver2t.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_bg.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_collapsedhor.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_collapsedver.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_cpanel_btn_dock.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_cpanel_btn_undock.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_drag_hor.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_drag_ver.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_hor1l.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_hor1r.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_hor2l.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_hor2r.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_progress.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_progress_global.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_ver1b.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_ver1t.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_ver2b.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_blue\dhxlayout_ver2t.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_bg.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_bg_sb.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_btns.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_collapsedhor.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_collapsedver.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_cpanel_btn_dock.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_cpanel_btn_undock.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_drag_hor.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_drag_ver.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_progress.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_skyblue\dhxlayout_progress_global.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_terrace\bg_def.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_terrace\dhxlayout_bg_sb.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_terrace\dhxlayout_btns.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_terrace\dhxlayout_drag_hor.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_terrace\dhxlayout_drag_ver.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_terrace\dhxlayout_progress.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_terrace\dhxlayout_progress_global.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_web\dhxlayout_bg_sb.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_web\dhxlayout_btns.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_web\dhxlayout_drag_hor.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_web\dhxlayout_drag_ver.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_web\dhxlayout_progress.gif" />
+    <Content Include="Content\dhtmlxLayout\imgs\dhxlayout_dhx_web\dhxlayout_progress_global.gif" />
+    <Content Include="Content\dhtmlxLayout\skins\dhtmlxlayout_dhx_black.css" />
+    <Content Include="Content\dhtmlxLayout\skins\dhtmlxlayout_dhx_blue.css" />
+    <Content Include="Content\dhtmlxLayout\skins\dhtmlxlayout_dhx_skyblue.css" />
+    <Content Include="Content\dhtmlxLayout\skins\dhtmlxlayout_dhx_terrace.css" />
+    <Content Include="Content\dhtmlxLayout\skins\dhtmlxlayout_dhx_web.css" />
+    <Content Include="Content\dhtmlxMenu\skins\dhtmlxmenu_dhx_black.css" />
+    <Content Include="Content\dhtmlxMenu\skins\dhtmlxmenu_dhx_blue.css" />
+    <Content Include="Content\dhtmlxMenu\skins\dhtmlxmenu_dhx_skyblue.css" />
+    <Content Include="Content\dhtmlxMenu\skins\dhtmlxmenu_dhx_terrace.css" />
+    <Content Include="Content\dhtmlxMenu\skins\dhtmlxmenu_dhx_web.css" />
+    <Content Include="Content\dhtmlxTabbar\dhtmlxtabbar.css" />
+    <Content Include="Content\dhtmlxTabbar\imgs\blank.html" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dark_blue\dark_blue_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dark_blue\dark_blue_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dark_blue\dark_blue_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dark_blue\dark_blue_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\default\close.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\default\default_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\default\default_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\default\default_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\default\default_scroll_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\default\default_scroll_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\default\default_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_black\close.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_black\dhx_black_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_black\dhx_black_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_black\dhx_black_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_black\dhx_black_scroll_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_black\dhx_black_scroll_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_black\dhx_black_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_blue\close.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_blue\dhx_blue_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_blue\dhx_blue_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_blue\dhx_blue_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_blue\dhx_blue_scroll_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_blue\dhx_blue_scroll_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_blue\dhx_blue_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\bg_bottom.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\bg_left.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\bg_right.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\bg_top.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\close.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\dhxlayout_bg_sb.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\dhx_skyblue_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\dhx_skyblue_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\dhx_skyblue_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\dhx_skyblue_scroll_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\dhx_skyblue_scroll_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_skyblue\dhx_skyblue_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_terrace\close.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_terrace\dhx_terrace_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_terrace\dhx_terrace_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_terrace\dhx_terrace_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_terrace\dhx_terrace_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_web\close.png" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_web\dhx_web_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_web\dhx_web_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_web\dhx_web_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_web\dhx_web_scroll_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_web\dhx_web_scroll_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\dhx_web\dhx_web_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\glassy_blue\glassy_blue_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\glassy_blue\glassy_blue_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\glassy_blue\glassy_blue_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\glassy_blue\glassy_blue_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\modern\modern_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\modern\modern_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\modern\modern_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\modern\modern_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\silver\silver_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\silver\silver_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\silver\silver_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\silver\silver_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winbiscarf\winbiscarf_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winbiscarf\winbiscarf_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winbiscarf\winbiscarf_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winbiscarf\winbiscarf_scroll_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winbiscarf\winbiscarf_scroll_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winbiscarf\winbiscarf_top.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winscarf\winscarf_bottom.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winscarf\winscarf_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winscarf\winscarf_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winscarf\winscarf_scroll_left.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winscarf\winscarf_scroll_right.gif" />
+    <Content Include="Content\dhtmlxTabbar\imgs\winscarf\winscarf_top.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_bg_over.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_btnarrow.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_btnarrow_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_slider_left.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_slider_left_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_slider_middle.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_slider_middle_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_slider_pen_def.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_slider_pen_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_slider_pen_over.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_slider_right.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_black\dhxtoolbar_slider_right_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_bg_over.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_btnarrow.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_btnarrow_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_slider_left.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_slider_left_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_slider_middle.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_slider_middle_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_slider_pen_def.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_slider_pen_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_slider_pen_over.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_slider_right.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_blue\dhxtoolbar_slider_right_dis.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_skyblue\dhxtoolbar_imgs.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_arrow.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_i_normal.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_i_normal_24.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_i_normal_32.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_i_normal_48.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_normal.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_normal_24.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_normal_32.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_normal_48.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_over.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_over_24.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_over_32.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_over_48.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_slider.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_slider_line.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_terrace\bg_sub_sep.gif" />
+    <Content Include="Content\dhtmlxToolbar\imgs\dhxtoolbar_dhx_web\dhxtoolbar_imgs.gif" />
+    <Content Include="Content\dhtmlxToolbar\skins\dhtmlxtoolbar_dhx_black.css" />
+    <Content Include="Content\dhtmlxToolbar\skins\dhtmlxtoolbar_dhx_blue.css" />
+    <Content Include="Content\dhtmlxToolbar\skins\dhtmlxtoolbar_dhx_skyblue.css" />
+    <Content Include="Content\dhtmlxToolbar\skins\dhtmlxtoolbar_dhx_terrace.css" />
+    <Content Include="Content\dhtmlxToolbar\skins\dhtmlxtoolbar_dhx_web.css" />
+    <Content Include="Content\dhtmlxTree\dhtmlxtree.css" />
+    <Content Include="Content\dhtmlxTree\imgs\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\but_cut.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\book.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\book_titel.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\but_cut.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\close2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\iconChecked.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\iconSafe.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\iconText.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\line.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\line1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\line1_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\line2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\line2_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\line3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\line3_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\line4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\line4_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus2_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus3_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus4_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\minus5_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus2_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus3_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus4_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\plus5_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluebooks\tombs.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconCheckAll_2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconChecked.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconFlag.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconGraph.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconSound.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconText.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconTexts.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconWrite1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\iconWrite2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\line.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\line1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\line2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\line3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\line4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\minus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\minus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\minus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\minus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\minus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\plus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\plus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\plus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\plus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\plus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_bluefolders\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\line.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\line1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\line2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\line3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\line4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\minus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\minus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\minus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\minus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\minus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\plus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\plus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\plus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\plus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\plus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\tombs.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_books\tombs_open.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconChecked.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconFlag.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconGraph.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconSound.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconText.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconTexts.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconWrite1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\iconWrite2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\line.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\line1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\line2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\line3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\line4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\minus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\minus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\minus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\minus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\minus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\plus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\plus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\plus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\plus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\plus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_black\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconChecked.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconFlag.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconGraph.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconSound.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconText.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconTexts.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconWrite1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\iconWrite2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\line.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\line1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\line2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\line3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\line4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\minus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\minus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\minus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\minus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\minus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\plus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\plus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\plus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\plus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\plus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\safe_close.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_blue\safe_open.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconChecked.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconFlag.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconGraph.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconSound.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconText.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconTexts.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconWrite1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\iconWrite2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\line.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\line1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\line2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\line3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\line4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\minus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\minus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\minus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\minus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\minus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\plus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\plus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\plus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\plus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\plus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_skyblue\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconChecked.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconFlag.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconGraph.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconSound.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconText.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconTexts.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconWrite1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\iconWrite2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\leaves.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_terrace\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconChecked.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconFlag.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconGraph.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconSound.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconText.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconTexts.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconWrite1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\iconWrite2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\leaves.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\line.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\line1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\line2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\line3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\line4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\minus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\minus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\minus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\minus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\minus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\plus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\plus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\plus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\plus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\plus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_dhx_web\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\blank.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\books_close.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\books_open.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\iconText.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\leaf2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\leaf3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\leaf_2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\line.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\line1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\line2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\line3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\line4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\minus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\minus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\minus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\minus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\minus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\plus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\plus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\plus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\plus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\plus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\tombs.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\csh_yellowbooks\tombs_open.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\folderClosed.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\folderOpen.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\iconCheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\iconCheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\iconCheckGray.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\iconUncheckAll.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\iconUncheckDis.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\leaf.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\line.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\line1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\line1_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\line2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\line2_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\line3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\line3_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\line4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\line4_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\lock.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus2_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus3_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus4_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus5_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\minus_ar.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus1.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus2.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus2_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus3.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus3_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus4.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus4_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus5.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus5_rtl.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\plus_ar.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\radio_off.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\radio_on.gif" />
+    <Content Include="Content\dhtmlxTree\imgs\sky_blue_sel_tree.png" />
+    <Content Include="Content\dhtmlxWindows\dhtmlxwindows.css" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_black\active\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_black\active\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_black\active\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_black\active\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_black\buttons.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_black\inactive\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_black\inactive\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_black\inactive\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_black\inactive\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_blue\active\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_blue\active\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_blue\active\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_blue\active\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_blue\buttons.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_blue\inactive\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_blue\inactive\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_blue\inactive\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_blue\inactive\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\active\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\active\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\active\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\active\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\buttons.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\inactive\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\inactive\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\inactive\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\inactive\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_skyblue\statusbar_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\active\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\active\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\active\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\active\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\buttons.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\inactive\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\inactive\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\inactive\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\inactive\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_terrace\statusbar_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\active\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\active\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\active\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\active\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\buttons.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\inactive\header_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\inactive\icon_blank.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\inactive\icon_normal.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\inactive\progress.gif" />
+    <Content Include="Content\dhtmlxWindows\imgs\dhxwins_dhx_web\statusbar_bg.gif" />
+    <Content Include="Content\dhtmlxWindows\skins\dhtmlxwindows_dhx_black.css" />
+    <Content Include="Content\dhtmlxWindows\skins\dhtmlxwindows_dhx_blue.css" />
+    <Content Include="Content\dhtmlxWindows\skins\dhtmlxwindows_dhx_skyblue.css" />
+    <Content Include="Content\dhtmlxWindows\skins\dhtmlxwindows_dhx_terrace.css" />
+    <Content Include="Content\dhtmlxWindows\skins\dhtmlxwindows_dhx_web.css" />
+    <Content Include="Content\imgs\ad.JPG" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\1_bg_dayofweek.png" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\1_cell_hover.png" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\1_cell_selected.png" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\1_cell_today.png" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\arrow_down.gif" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\arrow_left.gif" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\arrow_right.gif" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\arrow_up.gif" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\bg_days.png" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\bg_main.gif" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\bg_main_time.gif" />
+    <Content Include="Content\imgs\dhtmlxcalendar_dhx_terrace\clock.gif" />
+    <Content Include="Content\imgs\dhxaccord_dhx_terrace\bg_active.gif" />
+    <Content Include="Content\imgs\dhxaccord_dhx_terrace\bg_arrow.gif" />
+    <Content Include="Content\imgs\dhxaccord_dhx_terrace\bg_def.gif" />
+    <Content Include="Content\imgs\dhxaccord_dhx_terrace\dhxacc_bg.gif" />
+    <Content Include="Content\imgs\dhxaccord_dhx_terrace\dhxacc_bg_hover.gif" />
+    <Content Include="Content\imgs\dhxaccord_dhx_terrace\dhxacc_bg_normal.gif" />
+    <Content Include="Content\imgs\dhxaccord_dhx_terrace\dhxacc_bg_sb.gif" />
+    <Content Include="Content\imgs\dhxaccord_dhx_terrace\dhxacc_btns.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\align_center.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\align_center_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\align_justify.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\align_justify_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\align_left.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\align_left_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\align_right.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\align_right_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\bold.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\bold_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\buttons.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\clear.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\dhxeditor_bg_lite.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\h1.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\h1_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\h2.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\h2_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\h3.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\h3_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\h4.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\h4_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\indent_dec.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\indent_dec_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\indent_inc.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\indent_inc_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\italic.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\italic_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\list_bullet.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\list_bullet_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\list_number.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\list_number_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\script_sub.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\script_sub_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\script_super.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\script_super_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\strike.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\strike_dis.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\underline.gif" />
+    <Content Include="Content\imgs\dhxeditor_dhx_terrace\underline_dis.gif" />
+    <Content Include="Content\imgs\dhxform_dhx_terrace\dhxform_btns.gif" />
+    <Content Include="Content\imgs\dhxform_dhx_terrace\dhxform_chbxrd.gif" />
+    <Content Include="Content\imgs\dhxform_dhx_terrace\dhxform_upload_buttons.gif" />
+    <Content Include="Content\imgs\dhxform_dhx_terrace\dhxform_upload_uploading.gif" />
+    <Content Include="Content\imgs\dhxlayout_dhx_terrace\bg_def.gif" />
+    <Content Include="Content\imgs\dhxlayout_dhx_terrace\dhxlayout_bg_sb.gif" />
+    <Content Include="Content\imgs\dhxlayout_dhx_terrace\dhxlayout_btns.gif" />
+    <Content Include="Content\imgs\dhxlayout_dhx_terrace\dhxlayout_drag_hor.gif" />
+    <Content Include="Content\imgs\dhxlayout_dhx_terrace\dhxlayout_drag_ver.gif" />
+    <Content Include="Content\imgs\dhxlayout_dhx_terrace\dhxlayout_progress.gif" />
+    <Content Include="Content\imgs\dhxlayout_dhx_terrace\dhxlayout_progress_global.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_black\dhtmlxmenu_bg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_black\dhtmlxmenu_chrd.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_black\dhtmlxmenu_loader.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_black\dhtmlxmenu_subar.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_black\dhtmlxmenu_subsepbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_black\dhtmlxmenu_upar.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_blue\dhtmlxmenu_bg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_blue\dhtmlxmenu_chrd.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_blue\dhtmlxmenu_loader.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_blue\dhtmlxmenu_subar.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_blue\dhtmlxmenu_subsepbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_blue\dhtmlxmenu_upar.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_skyblue\dhtmlxmenu_chrd.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_skyblue\dhtmlxmenu_loader.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_skyblue\dhtmlxmenu_subar.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_skyblue\dhtmlxmenu_upar.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_skyblue\dhxmenu_bg_acccell.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_skyblue\dhxmenu_subselbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_skyblue\dhxmenu_subsepbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_skyblue\dhxmenu_topselbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_skyblue\dhxmenu_topsepbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_terrace\dhtmlxmenu_chrd.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_terrace\dhtmlxmenu_loader.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_terrace\dhtmlxmenu_subar.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_terrace\dhxmenu_bg_item.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_terrace\dhxmenu_bg_item_sel.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_terrace\dhxmenu_bg_subsep.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_web\dhxmenu_chrd.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_web\dhxmenu_loader.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_web\dhxmenu_subar.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_web\dhxmenu_subselbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_web\dhxmenu_subsepbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_web\dhxmenu_topbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_web\dhxmenu_topselbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_web\dhxmenu_topsepbg.gif" />
+    <Content Include="Content\imgs\dhxmenu_dhx_web\dhxmenu_upar.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_arrow.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_i_normal.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_i_normal_24.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_i_normal_32.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_i_normal_48.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_normal.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_normal_24.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_normal_32.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_normal_48.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_over.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_over_24.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_over_32.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_over_48.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_slider.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_slider_line.gif" />
+    <Content Include="Content\imgs\dhxtoolbar_dhx_terrace\bg_sub_sep.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\active\header_bg.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\active\icon_blank.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\active\icon_normal.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\active\progress.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\buttons.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\inactive\header_bg.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\inactive\icon_blank.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\inactive\icon_normal.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\inactive\progress.gif" />
+    <Content Include="Content\imgs\dhxwins_dhx_terrace\statusbar_bg.gif" />
+    <Content Include="Content\imgs\dhx_skyblue\bg_top.png" />
+    <Content Include="Content\imgs\dhx_terrace\close.png" />
+    <Content Include="Content\imgs\dhx_terrace\dhx_terrace_bottom.gif" />
+    <Content Include="Content\imgs\dhx_terrace\dhx_terrace_left.gif" />
+    <Content Include="Content\imgs\dhx_terrace\dhx_terrace_right.gif" />
+    <Content Include="Content\imgs\dhx_terrace\dhx_terrace_top.gif" />
+    <Content Include="Content\imgs\down.png" />
+    <Content Include="Content\imgs\food-bg.jpg" />
+    <Content Include="Content\imgs\glyphicons-halflings-white.png" />
+    <Content Include="Content\imgs\glyphicons-halflings.png" />
+    <Content Include="Content\imgs\li.gif" />
+    <Content Include="Content\imgs\logout-bg.jpg" />
+    <Content Include="Content\imgs\right.png" />
+    <Content Include="Content\imgs\RTXAccount.jpg" />
+    <Content Include="Content\imgs\skinicon\dhx_black.jpg" />
+    <Content Include="Content\imgs\skinicon\dhx_blue.jpg" />
+    <Content Include="Content\imgs\skinicon\dhx_skyblue.jpg" />
+    <Content Include="Content\imgs\skinicon\dhx_terrace.jpg" />
+    <Content Include="Content\imgs\skinicon\dhx_web.jpg" />
+    <Content Include="Content\imgs\tc3.jpg" />
+    <Content Include="Content\imgs\top-bg.jpg" />
+    <Content Include="Content\Login.css" />
+    <Content Include="Content\metro-bootstrap.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\clike.js" />
+    <Content Include="Scripts\codemirror.js" />
+    <Content Include="Scripts\DatePicker\calendar.js" />
+    <Content Include="Scripts\DatePicker\lang\en.js" />
+    <Content Include="Scripts\DatePicker\lang\zh-cn.js" />
+    <Content Include="Scripts\DatePicker\lang\zh-tw.js" />
+    <Content Include="Scripts\DatePicker\skin\datePicker.gif" />
+    <Content Include="Scripts\DatePicker\skin\default\datepicker.css" />
+    <Content Include="Scripts\DatePicker\skin\default\img.gif" />
+    <Content Include="Scripts\DatePicker\skin\WdatePicker.css" />
+    <Content Include="Scripts\DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\DatePicker\WdatePicker.js" />
+    <Content Include="Scripts\dhtmlxaccordion.js" />
+    <Content Include="Scripts\dhtmlxcommon.js" />
+    <Content Include="Scripts\dhtmlxcontainer.js" />
+    <Content Include="Scripts\dhtmlxlayout.js" />
+    <Content Include="Scripts\dhtmlxmenu.js" />
+    <Content Include="Scripts\dhtmlxmenu_effects.js" />
+    <Content Include="Scripts\dhtmlxmenu_ext.js" />
+    <Content Include="Scripts\dhtmlxtabbar.js" />
+    <Content Include="Scripts\dhtmlxtabbar_start.js" />
+    <Content Include="Scripts\dhtmlxtoolbar.js" />
+    <Content Include="Scripts\dhtmlxtree.js" />
+    <Content Include="Scripts\dhtmlxwindows.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-10.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EF6Model.Service\EF6Model.Service.csproj">
+      <Project>{daba0097-9a42-4125-bd14-4a39924ebaa9}</Project>
+      <Name>EF6Model.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EF6Model\EF6Model.csproj">
+      <Project>{7505782a-598c-4ca2-a0ad-3539295a2265}</Project>
+      <Name>EF6Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3824/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
